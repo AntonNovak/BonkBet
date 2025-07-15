@@ -50,7 +50,6 @@ const StyledHeader = styled.div`
   top: 0;
   left: 0;
   z-index: 1000;
-  border-bottom: 1px solid var(--gamba-ui-primary-color);
 `
 
 const Logo = styled(NavLink)`
@@ -126,7 +125,7 @@ export default function Header() {
       <StyledHeader>
         <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
           <Logo to="/">
-            <img alt="Gamba logo" src="/logo.svg" />
+            <img alt="Bonk logo" src="/logo.png" />
           </Logo>
         </div>
 
