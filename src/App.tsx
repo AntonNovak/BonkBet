@@ -13,6 +13,7 @@ import Header from './sections/Header'
 import RecentPlays from './sections/RecentPlays/RecentPlays'
 import Toasts from './sections/Toasts'
 import { MainWrapper, TosInner, TosWrapper } from './styles'
+import TrollBox from './components/TrollBox'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -79,6 +80,7 @@ export default function App() {
         <h2 style={{ textAlign: 'center' }}>Recent Plays</h2>
         <RecentPlays />
       </MainWrapper>
+      {ENABLE_TROLLBOX && <TrollBox />}
     </>
   )
 }
