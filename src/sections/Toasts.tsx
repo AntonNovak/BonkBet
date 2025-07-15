@@ -24,12 +24,14 @@ const StyledToasts = styled.div`
 `
 
 const StackedToast = styled.div`
-  background: #e8e8e8e3;
+  background: #1a1a1a;
+  border: 1px solid #F97425;
   width: 100%;
   border-radius: 10px;
   height: 60px;
   transform: translateY(-60px);
   z-index: -1;
+  box-shadow: 0 0 10px #F9742544;
 `
 
 const StyledToast = styled.div`
@@ -42,8 +44,9 @@ const StyledToast = styled.div`
     0% { opacity: 0; --fade-in: 100%; }
     100% { opacity: 1; --fade-in: 0%; }
   }
-  background: #fffffff0;
-  color: black;
+  background: #000000e0;
+  color: white;
+  border: 1px solid #F97425;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -57,11 +60,12 @@ const StyledToast = styled.div`
 
   width: 100%;
 
-  filter: drop-shadow(3px 3px 1px #00000033);
-  backdrop-filter: blur(50px);
+  box-shadow: 0 0 10px #F9742566;
+  backdrop-filter: blur(10px);
 
   &:hover {
-    background: #ffffffff;
+    background: #1a1a1ae0;
+    box-shadow: 0 0 15px #F9742588;
   }
 
   @media (min-width: 800px) {
@@ -79,7 +83,7 @@ const StyledTimer = styled.div<{$ticking: boolean}>`
   width: 100%;
   height: 5px;
   border-radius: 10px;
-  background: #cccccc55;
+  background: #333;
   position: relative;
   overflow: hidden;
   &:after {
@@ -93,7 +97,7 @@ const StyledTimer = styled.div<{$ticking: boolean}>`
     top: 0;
     width: 100%;
     height: 5px;
-    background: #9564ff;
+    background: #F97425;
   }
 `
 
@@ -131,7 +135,7 @@ function Toast({ toast }: {toast: TToast}) {
     >
       <div>
         <div style={{ fontWeight: 'bold' }}>{toast.title}</div>
-        <div style={{ color: 'gray', fontSize: '90%' }}>{toast.description}</div>
+        <div style={{ color: '#aaa', fontSize: '90%' }}>{toast.description}</div>
       </div>
       <StyledTimer $ticking={ticking} />
     </StyledToast>
