@@ -3,7 +3,7 @@
 }
 
 :root {
-  --background-color: linear-gradient(#040404, #f5a623); /* Changed from #0b0b0e to pure black */
+  --background-color: linear-gradient(#040404, #040404, #f5a623); /* Changed from #0b0b0e to pure black */
   --text-color: #ffffff;
   --gamba-ui-primary-color: #f5a623; /* Changed from purple to Bonk orange */
 
