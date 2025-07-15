@@ -20,15 +20,21 @@ import { ENABLE_LEADERBOARD } from '../constants'
 const Bonus = styled.button`
   all: unset;
   cursor: pointer;
-  color: #ffe42d;
+  background: #1a1a1a;
+  border: 2px solid #F97425;
+  color: #F97425;
   border-radius: 10px;
-  padding: 2px 10px;
-  font-size: 12px;
+  padding: 6px 12px;
+  font-size: 14px;
   text-transform: uppercase;
   font-weight: bold;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 10px #F9742544;
+
   &:hover {
-    background: white;
+    background: #F97425;
+    color: white;
+    box-shadow: 0 0 15px #F9742588;
   }
 `
 
@@ -37,20 +43,22 @@ const StyledHeader = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 10px;
+  padding: 10px 20px;
   background: #000000cc;
   backdrop-filter: blur(20px);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
+  border-bottom: 1px solid var(--gamba-ui-primary-color);
 `
 
 const Logo = styled(NavLink)`
-  height: 35px;
+  height: 40px;
   margin: 0 15px;
   & > img {
-    height: 120%;
+    height: 100%;
+    width: auto;
   }
 `
 
@@ -58,7 +66,7 @@ export default function Header() {
   const pool = useCurrentPool()
   const context = useGambaPlatformContext()
   const balance = useUserBalance()
-  const isDesktop = useMediaQuery('lg') 
+  const isDesktop = useMediaQuery('lg')
   const [showLeaderboard, setShowLeaderboard] = React.useState(false)
   const [bonusHelp, setBonusHelp] = React.useState(false)
   const [jackpotHelp, setJackpotHelp] = React.useState(false)
@@ -143,8 +151,8 @@ export default function Header() {
           )}
 
           {/* Leaderboard shows only on desktop */}
-          {isDesktop && (
-            <GambaUi.Button onClick={() => setShowLeaderboard(true)}>
+          {isDesktop && ENABLE_LEADERBOARD && (
+            <GambaUi.Button main onClick={() => setShowLeaderboard(true)}>
               Leaderboard
             </GambaUi.Button>
           )}
