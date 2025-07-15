@@ -17,9 +17,9 @@ const StyledToken = styled.div`
 `
 
 const StyledTokenImage = styled.img`
-  height: 24px;
-  width: 24px;
-  border-radius: 50%;
+  height: 20px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
 `
 
 const StyledTokenButton = styled.button`
